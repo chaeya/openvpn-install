@@ -11,6 +11,7 @@ openvpn 을 모르는 경우에도 쉽게 설치가 가능하며, vpn 사용자�
 아래와 같이 스크립트를 다운로드 받으신 후 루트 권한으로 실행하세요.
 
 $ wget https://raw.githubusercontent.com/chaeya/openvpn-install/master/openvpn-install.sh -O openvpn-install.sh
+
 $ sudo bash openvpn-install.sh
 
 몇가지 선택을 하면 설치가 완료됩니다. 잘 모르는 경우 그냥 기본으로 선택된 값을 사용하세요
