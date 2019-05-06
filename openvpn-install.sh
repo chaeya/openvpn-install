@@ -380,6 +380,10 @@ exit 0' > $RCLOCAL
 	fi
 	# client-common.txt is created so we have a template to add further users later
 	echo "client
+# slpit vpn tunnel
+pull-filter ignore "redirect-gateway def1 bypass-dhcp"
+pull-filter ignore "dhcp-option DNS 8.8.8.8"
+route 192.168.0.0 255.255.255.0
 dev tun
 proto $PROTOCOL
 sndbuf 0
@@ -392,7 +396,7 @@ persist-tun
 remote-cert-tls server
 auth SHA512
 cipher AES-256-CBC
-setenv opt block-outside-dns
+#setenv opt block-outside-dns
 key-direction 1
 verb 3" > /etc/openvpn/client-common.txt
 	# Generates the custom client.ovpn
