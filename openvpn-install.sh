@@ -383,9 +383,10 @@ exit 0' > $RCLOCAL
 	# client-common.txt is created so we have a template to add further users later
 	echo "client
 # slpit vpn tunnel
-pull-filter ignore "redirect-gateway def1 bypass-dhcp"
-pull-filter ignore "dhcp-option DNS 8.8.8.8"
-route 192.168.0.0 255.255.255.0
+#pull-filter ignore "redirect-gateway def1 bypass-dhcp"
+#route-nopull <-- openvpn client 2.3 에서는 pull-filter 대신에 이 명령을 사용
+#pull-filter ignore "dhcp-option DNS 8.8.8.8"
+#route 192.168.0.0 255.255.255.0
 dev tun
 proto $PROTOCOL
 sndbuf 0
